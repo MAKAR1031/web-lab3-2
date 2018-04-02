@@ -5,11 +5,16 @@ class TodosController < ApplicationController
 
   def add
     todo = Todo.new(todo_params)
-    if todo.save
-      render all_todo_json
-    else
+    if todo.text.nil?
       render json: {error: 'Invalid data'}
+      return
     end
+    if  Todo.where(text: todo.text).length >= 1
+      render json: {error: 'You have already added such a task!'}
+      return
+    end
+    todo.save
+    render all_todo_json
   end
 
   def change_priority
