@@ -16,6 +16,7 @@
     * серверной части выполнить в директории **server**:
     ```
     bundler install
+    rake db:create db:migrate
     rails s
     ```
     * клиентской части выполнить `npm start` в директории **client**
