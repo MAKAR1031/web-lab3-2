@@ -1,4 +1,5 @@
-import '../scss/app.scss';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../css/app.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

@@ -8,16 +8,15 @@ module.exports = {
     ],
     output: {
         path: __dirname + "/public",
-        publicPath: '/public',
         filename: 'bundle.js'
     },
     module: {
         rules: [
             {
-                test: /\.scss$/,
+                test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
+                    use: ['css-loader']
                 })
             },
             {
@@ -32,6 +31,7 @@ module.exports = {
     ],
     devServer: {
         contentBase: __dirname + '/public',
+        port: 8080,
         historyApiFallback: true
     }
 };

@@ -1,4 +1,6 @@
 node_modules
 *.log
+public/*
+!public/index.html
+!public/favicon.ico
 src/js/api/config.json
-package-lock.json
